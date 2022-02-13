@@ -7,7 +7,7 @@ char get_a_letter()
     cin >> h;
     if (isalpha(h))
         return h;
-    get_a_letter()
+    get_a_letter();
 }
 //-------------------------------------------------------------
 char unleveling(char c)

@@ -1,56 +1,55 @@
 #include <iostream>
+#include <string>
 using namespace std;
 unsigned int get_a_hexadecimal()
 {
+    string s;
     char c;
-    int n=0;
+    int i=0, n=0;
     bool legit=true;
-    do
+    cin >> s;
+    int l = s.length();
+    for (;i<l;i++)
     {
-        cin >> c;
-        if (isdigit(c))
+    	c = s[i];
+	    if (isdigit(c))
         {
-            n += c;
             n *= 16;
+            n += c - '0';
         }
         else
         {
             switch (c)
             {
                 case 'A':
+            		n *= 16;
                     n += 10;
-                    n *= 16;
                     break;
                 case 'B':
-                    n += 11;
                     n *= 16;
+                    n += 11;
                     break;
                 case 'C':
-                    n += 12;
                     n *= 16;
+                    n += 12;
                     break;
                 case 'D':
                     n += 13;
                     n *= 16;
                     break;
                 case 'E':
-                    n += 14;
                     n *= 16;
+                    n += 14;
                     break;
                 case 'F':
-                    n += 15;
                     n *= 16;
-                    break;
-                case ' ':
-                    break;
-                case '\n':
+                    n += 15;
                     break;
                 default:
                     legit = false;
             }
         }
     }
-    while(c != ' ' && c != '\n');
     if (legit)
         return n;
     else

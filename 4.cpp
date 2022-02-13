@@ -3,7 +3,7 @@ using namespace std;
 void binary(unsigned int n)
 {
     int d=n%2;
-    if (n>0)
+    if (n>1)
         binary(n/2);
     cout << d;
 }
